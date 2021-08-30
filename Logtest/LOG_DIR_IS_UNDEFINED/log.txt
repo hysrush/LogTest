@@ -1,0 +1,20 @@
+[INFO ] 19:41:40.731 com.example.demo.LogtestApplication - Starting LogtestApplication using Java 15.0.2 on DESKTOP-4NBH36P with PID 11408 (C:\JSP\projects\Logtest\bin\main started by user in C:\JSP\projects\Logtest)
+[INFO ] 19:41:40.732 com.example.demo.LogtestApplication - No active profile set, falling back to default profiles: default
+[INFO ] 19:41:40.759 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 19:41:40.759 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[WARN ] 19:41:41.162 o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+[INFO ] 19:41:41.420 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 19:41:41.430 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 19:41:41.430 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 19:41:41.430 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+[INFO ] 19:41:41.482 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 19:41:41.482 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 722 ms
+[INFO ] 19:41:41.780 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 19:41:41.791 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 19:41:41.805 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 19:41:41.838 com.example.demo.LogtestApplication - Started LogtestApplication in 1.402 seconds (JVM running for 1.844)
+[INFO ] 19:41:49.774 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 19:41:49.774 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 19:41:49.775 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[INFO ] 19:41:49.787 com.example.demo.info.infoController - return com.example.demo.info.model.Project@7b5d0a35
+[INFO ] 23:58:26.042 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.

@@ -1,0 +1,36 @@
+[INFO ] 19:35:02.447 com.example.demo.LogtestApplication - Starting LogtestApplication using Java 15.0.2 on DESKTOP-4NBH36P with PID 14132 (C:\JSP\projects\Logtest\bin\main started by user in C:\JSP\projects\Logtest)
+[INFO ] 19:35:02.448 com.example.demo.LogtestApplication - No active profile set, falling back to default profiles: default
+[WARN ] 19:35:02.568 o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+[INFO ] 19:35:02.601 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 19:35:02.601 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 19:35:02.602 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 19:35:02.602 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+[INFO ] 19:35:02.617 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 19:35:02.617 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 167 ms
+[INFO ] 19:35:02.696 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 19:35:02.701 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 19:35:02.702 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 19:35:02.729 com.example.demo.LogtestApplication - Started LogtestApplication in 0.321 seconds (JVM running for 1983.863)
+[INFO ] 19:35:02.730 o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[INFO ] 19:35:08.243 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ] 19:37:16.150 com.example.demo.LogtestApplication - Starting LogtestApplication using Java 15.0.2 on DESKTOP-4NBH36P with PID 3392 (C:\JSP\projects\Logtest\bin\main started by user in C:\JSP\projects\Logtest)
+[INFO ] 19:37:16.151 com.example.demo.LogtestApplication - No active profile set, falling back to default profiles: default
+[INFO ] 19:37:16.177 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 19:37:16.178 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[WARN ] 19:37:16.573 o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+[INFO ] 19:37:16.826 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 19:37:16.836 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 19:37:16.836 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 19:37:16.836 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+[INFO ] 19:37:16.888 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 19:37:16.888 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 710 ms
+[INFO ] 19:37:17.185 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 19:37:17.196 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 19:37:17.209 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 19:37:17.241 com.example.demo.LogtestApplication - Started LogtestApplication in 1.382 seconds (JVM running for 1.825)
+[INFO ] 19:37:46.653 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 19:37:46.654 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 19:37:46.654 o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[INFO ] 19:37:46.667 com.example.demo.info.infoController - return com.example.demo.info.model.Project@1cca2ab9
+[INFO ] 19:38:56.375 com.example.demo.info.infoController - return com.example.demo.info.model.Project@72f1a5c0
+[INFO ] 19:39:23.309 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
