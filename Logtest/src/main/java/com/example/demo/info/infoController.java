@@ -16,6 +16,7 @@ public class infoController {
 	@GetMapping("/info")
 	public Object projectInfo() {
 		log.debug("/info start");
+		log.debug("info");
 		Project project = new Project();
 		project.projectName = "preword";
 		project.author = "hello-bryan";
