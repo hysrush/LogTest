@@ -13,4 +13,6 @@ Slf4j 를 사용한다.
 
 # Slf4j 설정 방법 
 
+1. maven, gradle 프로젝트에 logback , slf4j의 의존성을 추가한다 . 
+
 
