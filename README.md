@@ -1,5 +1,5 @@
 # Log란 ?
-===========================================
+* * * 
 - 연속된 데이터의 기록, 프로그램이 실행되면서 console에 무언가 출력되는 것들을 의미
 - 1. 비즈니스 로직에서 로그성 코드를 분리.
 - 2. 상황에 따라 유연하게 대처 할 수 있도록 로그를 레벨로 분리하여 노출 및 관리
@@ -15,4 +15,7 @@ Slf4j 를 사용한다.
 
 1. maven, gradle 프로젝트에 logback , slf4j의 의존성을 추가한다 . 
 
+  implementation 'org.projectlombok:lombok'    
+	implementation('org.slf4j:jcl-over-slf4j')
+	implementation('ch.qos.logback:logback-classic')
 
