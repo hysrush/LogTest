@@ -16,7 +16,9 @@ Slf4j 를 사용한다.
 1. maven, gradle 프로젝트에 logback , slf4j의 의존성을 추가한다 . 
 
   	implementation 'org.projectlombok:lombok'    :  __롬복에 대한 의존성__
+	
 	implementation('org.slf4j:jcl-over-slf4j')   :  __slf4j에 대한 의존성__
+	
 	implementation('ch.qos.logback:logback-classic') :  __logback에 대한 의존성__
 	
 2. logback.xml 설정 	
@@ -27,14 +29,18 @@ Slf4j 를 사용한다.
 
 -일반적으로 xml 파일에는 아래와 같이 설정을 한다.
 
+<property name="LOGS_ABSOLUTE_PATH" value="./logs" />
+
  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern> %d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %magenta(%-4relative) --- [ %thread{10} ] %cyan(%logger{20}) : %msg%n </pattern>
         </encoder>
  </appender>
 	
+	
 -appender는 어디에, 어떻게 로그를 저장할 것인지에 대한 설정을 의미한다 .
 저장 방식에는 console, file, rollingfile , SMTPAppender, DBAppender 등등이 있으며.
+
 1. consoleAppender : 콘솔에 로그를 어떤 포맷으로 출력할지 설정.
 2. fileAppender : 파일에 로그를 찍는 방법.
 3. RollingFileAppender : 여러개의 파일을 순회하며 로그를 찍는 방법.
@@ -43,4 +49,14 @@ Slf4j 를 사용한다.
 
 __보통 console 방식과 RollingFile 방식을 가장 자주 사용한다.__
 
+- <property> 엘리먼트는 해당 설정파일에서 사용될 값을 정의하는 것으로 , LOGS_ABSOLUTE_PATH"
+	라고 로그가 쌓일 경로를 지정 해놓았다.
 
+- <encoder> 엘리먼트는 appender가 관리하는 OutputStream 에 쓸 시간과 내용을 제어 할 수 있다.
+	encoder의 내부에서 로그를 찍을 pattern 을 정리한다.
+
+- <pattern> 이 엘리먼트에서 작성된 패턴 룰에 의해서 로그가 찍힌다.	
+Link: https://jdkblog.tistory.com/122
+
+
+	
