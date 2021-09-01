@@ -11,4 +11,6 @@ ex) logback-classic , log4j , java.util.logging , simple , ....
 이러한 로깅 관련 라이브러리들을, 하나의 통일된 방식으로 사용할 수 있게 제공하는 로깅 facade interface 
 Slf4j 를 사용한다. 
 
+# Slf4j 설정 방법 
+
 
