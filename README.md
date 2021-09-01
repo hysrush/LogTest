@@ -26,6 +26,7 @@ Slf4j 를 사용한다.
 로그에 대한 설정파일이라는 것을 인지하고 읽는다.
 
 -일반적으로 xml 파일에는 아래와 같이 설정을 한다.
+
  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern> %d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %magenta(%-4relative) --- [ %thread{10} ] %cyan(%logger{20}) : %msg%n </pattern>
