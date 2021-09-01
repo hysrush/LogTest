@@ -49,14 +49,28 @@ Slf4j 를 사용한다.
 
 __보통 console 방식과 RollingFile 방식을 가장 자주 사용한다.__
 
-- <property> 엘리먼트는 해당 설정파일에서 사용될 값을 정의하는 것으로 , LOGS_ABSOLUTE_PATH"
+- property 엘리먼트는 해당 설정파일에서 사용될 값을 정의하는 것으로 , LOGS_ABSOLUTE_PATH"
 	라고 로그가 쌓일 경로를 지정 해놓았다.
 
-- <encoder> 엘리먼트는 appender가 관리하는 OutputStream 에 쓸 시간과 내용을 제어 할 수 있다.
+- encoder 엘리먼트는 appender가 관리하는 OutputStream 에 쓸 시간과 내용을 제어 할 수 있다.
 	encoder의 내부에서 로그를 찍을 pattern 을 정리한다.
 
-- <pattern> 이 엘리먼트에서 작성된 패턴 룰에 의해서 로그가 찍힌다.	
-Link: https://jdkblog.tistory.com/122
+- pattern 이 엘리먼트에서 작성된 패턴 룰에 의해서 로그가 찍힌다.	
+- Link: https://jdkblog.tistory.com/122
+
+__로그 레벨(log level)
+
+ERROR > WARN > INFO > DEBUG > TRACE 
+
+순서이며, LEVEL 설정으로 해당 레벨 이상의 것만 찍히게된다.
+
+예를 들면 LEVEL을 INFO로 지정하면 INFO, WARN , ERROR에 대한 로그만 찍히게 된다.
+단계의 의미로는 
+
+1. ERROR : 요청을 처리하는 중 문제가 발생한 상태.
+2. WARN : 요청을 처리하는 중 문제가 발생했지만, 불완전하게나마 처리가 가능한 상태.
+3. INFO : 어플리케이션이 작동할때 필요한 기본적인 정보
+4. DEBUG : 디버깅, 즉 문제 해결을 하기 위한 상태 정보를 나타낸다.
+5. TRACE : 디버그 레벨이 너무 광범위 한 것을 해결하기 위해 좀더 상세한 상태를 나타낸다.
 
 
-	
