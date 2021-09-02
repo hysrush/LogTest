@@ -1,34 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xml>
-<configuration scan="true" scanPeriod="30 seconds">
-	<property name="LOG DIR" value="logs"></property>
-	<!-- 콘솔에 로그 남기는법 -->
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}[%-5level] : %msg%n</pattern>
-        </encoder>
-    </appender>
-    <!-- 하루단위로 로그 파일로남기는법 -->
-    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>INFO</level>
-        </filter>
-        <file>${LOG_DIR}/log.txt</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- rollover daily -->
-            <fileNamePattern>${LOG_DIR}/log-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy
-                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <!-- or whenever the file size reaches 100MB -->
-                <maxFileSize>100MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
-        </rollingPolicy>
-        <encoder>
-            <pattern>[%-5level] %d{HH:mm:ss.SSS} %logger{36} - %msg%n</pattern>
-        </encoder>
-    </appender>
-    <root level="debug"> <!-- 디버그 이상 레벨만. 롤링로그로 남겨라. -->
-        <appender-ref ref="STDOUT"/>
-        <appender-ref ref="ROLLING"/>
-    </root>
+
+<configuration scan="true" scanPeriod="60 seconds">
+	
+	<!-- springProfile 태그를 사용하면 logback 설정파일에서 복수개의 프로파일을 설정할수있다. -->
+	
+	<springProfile name="local">
+		<property resource="logback-local.properties"></property>
+	</springProfile>
+	
+	<springProfile name="dev">
+		<property resource="logback-dev.properties"></property>
+	</springProfile>
+
+	<!-- Environment 내의 프로퍼티들을 개별 설정할 수도 있다. -->
+
+	<springProperty scope="context" name="LOG_LEVEL" source="logging.level.root"/>
+
+	<!-- log file path -->
+	<property name="LOG_PATH" value="${log.config.path}"/>
+	<!-- log file name -->
+	<property name="LOG_FILE_NAME" value="${log.config.filename}"/>
+	<!-- err log file name -->
+	 <property name="ERR_LOG_FILE_NAME" value="err_log"/>
+	 <!-- pattern --> 
+	 <property name="LOG_PATTERN" value="%-5level %d{yy-MM-dd HH:mm:ss}[%thread] [%logger{0}:%line] - %msg%n"/>
+
+
+	<!-- console appender -->
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>${LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- File Appender -->
+<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	<!-- 파일 경로 설정  -->
+	<file>${LOG_PATH}/${LOG_FILE_NAME}.log</file>
+	
+	<!-- 출력 패턴 설정 -->
+	<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+		<pattern>${LOG_PATTERN}</pattern>
+	</encoder>
+	
+	<!-- Rolling 정책 -->
+	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	<!-- .gz , .zip 등을 넣으면 자동 일자별 로그파일 압축 -->
+	<fileNamePattern>${LOG_PATH}/${LOG_FILE_NAME}.%d{yyyy-MM-dd}_%i.log</fileNamePattern>
+	<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+		<!-- 파일당 최고 용량 kb,mb,gb -->
+		<maxFileSize>10MB</maxFileSize>
+	</timeBasedFileNamingAndTriggeringPolicy>
+	<!-- 일자별 로그파일 최대 보관주기(~일) , 해당 설정일 이상 된 파일은 자동 제거 -->
+	<maxHistory>30</maxHistory>
+	</rollingPolicy>
+</appender>
+	
+	<!-- ROOT 레벨 설정 (전역설정) -->	
+	<root level="${LOG_LEVEL}">
+		<appender-ref ref="CONSOLE"/>
+		<appender-ref ref="FILE"/>
+	</root>
+	<!-- 특정 패키지 로깅 설정 -->
+	<logger name="org.apache.ibatis" level="DEBUG" additivity="false">
+		<appender-ref ref="CONSOLE"/>
+		<appender-ref ref="FILE"/>
+	</logger>
+
 </configuration>
