@@ -8,8 +8,12 @@
 		<property resource="logback-local.properties"></property>
 	</springProfile>
 	
-	<springProfile name="dev">
-		<property resource="logback-dev.properties"></property>
+	<springProfile name="stage">
+		<property resource="logback-stage.properties"></property>
+	</springProfile>
+	
+	<springProfile name="production">
+		<property resource="logback-production.properties"></property>
 	</springProfile>
 
 	<!-- Environment 내의 프로퍼티들을 개별 설정할 수도 있다. -->
