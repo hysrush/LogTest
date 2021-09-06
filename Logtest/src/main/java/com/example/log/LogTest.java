@@ -1,4 +1,4 @@
-package org.apache.ibatis;
+package com.example.log;
 
 
 import org.slf4j.Logger;
